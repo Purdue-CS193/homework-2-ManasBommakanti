@@ -186,11 +186,12 @@ public class Questions {
     public static boolean findSubstring(String theBigOne, String sub) {
         // checks to see if variable sub appears in theBigOne
         // highly recommended to write this one out on a notebook
-        /* int counter = 0;
-        for (int i = 1; i < theBigOne.length(); i++) {
+        int counter = 0;
+        for (int i = 0; i <= theBigOne.length() - sub.length(); i++) {
             if (theBigOne.charAt(i) == sub.charAt(0)) {
-                for (int j = 1; j < theBigOne.length(); j++) {
-                    if (theBigOne.charAt(j) == sub.charAt(j - i)) {
+                counter++;
+                for (int j = 1; j < sub.length(); j++) {
+                    if (theBigOne.charAt(i + j) == sub.charAt(j)) {
                         counter += 1;
                     } else { // a character didn't match so break
                         break;
@@ -200,8 +201,8 @@ public class Questions {
                     }
                 }
             }
-        }*/
-        return theBigOne.contains(sub);
+        }
+        return false;
     }
     // Main method is used for testing purposes
     public static void main(String[] args) {
